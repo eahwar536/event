@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Event Registration Form</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f4f4;
+      display: flex;
+      justify-content: center;
+      padding-top: 50px;
+    }
+    .form-container {
+      background: white;
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      width: 400px;
+    }
+    h2 {
+      text-align: center;
+    }
+    label {
+      display: block;
+      margin-top: 15px;
+    }
+    input, select {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    button {
+      margin-top: 20px;
+      width: 100%;
+      padding: 10px;
+      background: #28a745;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .success {
+      color: green;
+      margin-top: 15px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+
+<div class="form-container">
+  <h2>Event Registration</h2>
+  <form id="registrationForm">
+    <label for="name">Full Name:</label>
+    <input type="text" id="name" name="name" required>
+
+    <label for="email">Email Address:</label>
+    <input type="email" id="email" name="email" required>
+
+    <label for="phone">Phone Number:</label>
+    <input type="tel" id="phone" name="phone" required>
+
+    <label for="event">Select Event:</label>
+    <select id="event" name="event" required>
+      <option value="">--Please choose an event--</option>
+      <option value="Tech Conference">Tech Conference</option>
+      <option value="Startup Meetup">Startup Meetup</option>
+      <option value="Workshop">Workshop</option>
+    </select>
+
+    <button type="submit">Register</button>
+    <p class="success" id="successMessage" style="display:none;">Registration successful!</p>
+  </form>
+</div>
+
+<script>
+  const form = document.getElementById('registrationForm');
+  const successMessage = document.getElementById('successMessage');
+
+  form.addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    // You could add additional validation here
+
+    // Simulate form submission
+    successMessage.style.display = 'block';
+    form.reset();
+
+    // Optionally send form data using fetch() or XMLHttpRequest
+  });
+</script>
+
+</body>
+</html>
